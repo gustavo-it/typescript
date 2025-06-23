@@ -1,6 +1,7 @@
 // eslint.config.js
 import eslintPluginTs from '@typescript-eslint/eslint-plugin';
 import parserTs from '@typescript-eslint/parser';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
   {
@@ -21,11 +22,13 @@ export default [
     },
     plugins: {
       '@typescript-eslint': eslintPluginTs,
+      prettier: prettierPlugin,
     },
     rules: {
       ...eslintPluginTs.configs.recommended.rules,
+      'prettier/prettier': 'error',
       // Aqui você pode adicionar regras personalizadas, por exemplo:
       // '@typescript-eslint/no-explicit-any': 'warn',
-    },
+    }
   },
 ];
